@@ -1,0 +1,24 @@
+
+	<h1>Hot Weather Widget</h1>
+<div class="element">
+	<div class="element-left">
+			<div class="element-bg-img"><img [src]="select.mainPhoto" alt="" class="img-responsive"> </div>
+			<div class="element-left-bottom">
+				<div class="ele-strip">
+					<ul>
+						<li><a (click)="selectCountry('ru')">Россия</a></li>
+						<li><a (click)="selectCountry('fi')">Финляндия</a></li>
+						
+					</ul>
+					
+				</div>
+		<app-resort (clickResort)="selectResort($event)" [countryFilter]="selectedCountry"></app-resort>
+			</div>
+	</div>
+		<div class="element-right">
+      <app-weather [resort]="select"></app-weather>
+			<app-followers [resort]="select"></app-followers>
+		</div>
+	  <div class="clear"> </div>
+</div>
+
